@@ -1,0 +1,31 @@
+.main-screen{
+  display: flex;
+}
+.start-button , .stop-button{
+  display: flex;
+  width: 200px;
+  height: 71px;
+  margin: 20px auto;
+  padding: 0 50px;
+  background-color: rgb(82, 206, 223);
+  font-size: 40px;
+  font-family: 'Hi Melody', cursive;
+  border-radius: 40px;
+  box-shadow: -4px 5px grey;
+}
+.options{
+  width: 500px;
+  height: 100vh;
+}
+.title {
+  display: flex;
+  margin: 50px auto;
+}
+
+
+
+#gameBoard{
+  display: flex;
+  justify-content: flex-end;
+
+}
