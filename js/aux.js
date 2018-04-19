@@ -20,13 +20,7 @@ function generateSteps (){
     obst.push(new Step(type,x));
 }
   }
-function condition (){
-  if (frames % 1000 === 0 ){
-    return true;
-  }else{
-    return false;
-  }
-}
+
 
 function drawCharachters(){
   charach.forEach(function(charachter){
@@ -36,20 +30,14 @@ function drawCharachters(){
 
 
 
-function generateCharachters(){
-  if (condition()) return;
+
+
+/*function generateCharachters(){
   var element = Math.floor(Math.random()*randomCharacter.length);
 var y = Math.floor(Math.random()*canvas.height - 10)
 charach.push(new Charachter(element,y));
 
-}
+}*/
 
 
 
-function gameOver(){
-  pauseGame();
-    ctx.font = "120px courirer"
-    ctx.strokeStyle = "orange";
-    ctx.lineWidth = 8;
-    ctx.strokeText("Game Over", 50, 200);
-}

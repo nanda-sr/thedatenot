@@ -6,6 +6,7 @@ window.onload = function (){
   }
   document.getElementById('stop').onclick = function(){
     pauseGame();
+  
   }
 }
 

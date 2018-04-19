@@ -9,6 +9,8 @@ function Board (){
   this.img = new Image();
   this.img.src = "resources/bg-1.png"
   this.score = 0;
+  this.music = new Audio ();
+  this.music.src = "resources/background-music.mp3";
   this.img.onload = function (){
     this.draw();
   }.bind(this);
@@ -31,7 +33,7 @@ this.drawScore = function(){
 
 function Jeffers(){
   this.x = 250;
-  this.y = canvas.height - 100;
+  this.y = canvas.height - 150;
   this.width = 80;
   this.height = 120;
   this.speed = 2;
@@ -44,9 +46,7 @@ function Jeffers(){
     this.draw();
   }.bind(this);
   this.draw = function (){
-    //this.y --;
    ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-   //if (this.y < 0 || this.y > canvas.height-120) gameOver();
 this.speedY *= this.friction;
 this.y += this.speedY;
 this.speedX *= this.friction;
@@ -106,15 +106,14 @@ this.draw = function (){
 }
 
 function Rebecca(){
-  this.x= 175;
+  this.x= 120;
   this.y = 240;
-  this.width= 150;
-  this.height = 300;
+  this.width= 300;
+  this.height = 350;
   this.img = new Image ();
   this.img.src = "resources/rebecca.png";
-  this.img.onload = function(){
-    this.draw();
-  } .bind(this);
+  this.music = new Audio ();
+  this.music.src = "resources/upsis.mp3"
  this.draw = function (){
   ctx.drawImage (this.img, this.x, this.y, this.width, this.height);
 }

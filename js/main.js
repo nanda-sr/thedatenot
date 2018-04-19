@@ -12,7 +12,15 @@ function checkCollition (){
     }
   });
 }
+function loseGame (){
+
+  if (mrJeffers.y === canvas.height - 100) gameOver();
+}
 //MainFunctions
+
+
+
+
 
 function update (){
   frames++; 
@@ -24,6 +32,7 @@ function update (){
  // console.log('obstacles: ', obst.length);
   board.drawScore();
   checkCollition();
+  loseGame();
   
 }
 
@@ -33,12 +42,25 @@ function beginGame(){
     update();
    generateSteps();
    initialJumping();
-   generateCharachters();
+  // board.music.play();
   }, 1000/60);
 }
 function pauseGame(){
   clearInterval(interval);
   interval= 0;
+}
+
+function gameOver(){
+  pauseGame();
+ // board.music.pause();
+  ctx.fillStyle = "#ccf7ff"
+  ctx.fillRect (0,0, canvas.width, canvas.height);
+  rebecca.draw();
+    ctx.font = "60px hi-melody"
+    ctx.strokeStyle = "purple";
+    ctx.lineWidth = 5;
+    ctx.strokeText("Game Over", 120 , 250);
+  rebecca.music.play();
 }
 
 

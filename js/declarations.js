@@ -1,6 +1,7 @@
 //DECLARATIONS
 var board = new Board();
-var mrJeffers = new Jeffers();    
+var mrJeffers = new Jeffers(); 
+var rebecca = new Rebecca ();
           // obstacles 
 var randomObstacle = ["resources/obstacle-easy.png", "resources/worm-obst.png", "resources/grassg-obstacle.png",
  "resources/cloud-obst.png", "resources/mush-obst.png"];
