@@ -99,3 +99,7 @@ body{
 .button-change{
   display: none;
 }
+
+.continue-button{
+  padding: 0 35px;
+}
