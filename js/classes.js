@@ -11,9 +11,9 @@ function Board (){
   this.score = 0;
   this.music = new Audio ();
   this.music.src = "resources/background-music.mp3";
-  this.img.onload = function (){
-    this.draw();
-  }.bind(this);
+//  this.img.onload = function (){
+ // this.draw();
+ // }.bind(this);
   this.move = function(){
    this.y--;
     if (this.y< - canvas.height) this.y = 0;
@@ -42,16 +42,19 @@ function Jeffers(){
   this.friction  = 0.98
   this.img = new Image();
   this.img.src = "resources/mr-jeffers.png"
-  this.img.onload = function(){
-    this.draw();
-  }.bind(this);
+  //this.img.onload = function(){
+    //this.draw();
+  //}.bind(this);
   this.draw = function (){
    ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 this.speedY *= this.friction;
 this.y += this.speedY;
 this.speedX *= this.friction;
 this.x +=  this.speedX;
-if (this.x === 0 || this.x === 500) this.x <=500;  
+if (this.x === 0)this.x = 500;
+if (this.x === 500) this.x=0;
+
+//if (this.x === 0 || this.x === 500) this.x <=500;  
 if (this.y === 0) this.y += 5;
 
   if (this.y > 775){
@@ -91,17 +94,18 @@ function Step(type, x){
   this.y= 10;
   this.width=75;
   this.height=15;
-  this.img = new Image ();
-  this.img.src = randomObstacle[type];  
+  this.img = new Image();
+  this.img.src = randomObstacle[type];
   this.img.onload = function (){
     this.draw();
   }.bind(this);
 this.move= function(){
-  this.y ++;
+  this.y ++ ;
 }
 this.draw = function (){
   this.move();
   ctx.drawImage (this.img ,this.x, this.y, this.width, this.height);
+  ctx.drawImage (this.img, this.x, this.y++, this.width, this.height);
 }
 }
 
@@ -118,17 +122,4 @@ function Rebecca(){
   ctx.drawImage (this.img, this.x, this.y, this.width, this.height);
 }
 }
-function Charachter (element,y){
-  this.x = 0;
-  this.y = y;
-  this.width = 100;
-  this.height = 150;
-  this.img = new Image();
-  this.img.src = randomCharacter[element];
-  this.img.onload = function (){
-    this.draw();
-  }.bind(this);
-    this.draw = function (){
-    ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-  }
-}
+

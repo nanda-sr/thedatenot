@@ -14,7 +14,7 @@ function checkCollition (){
 }
 function loseGame (){
 
-  if (mrJeffers.y === canvas.height - 100) gameOver();
+  if (mrJeffers.y === canvas.height - 120) gameOver();
 }
 //MainFunctions
 
@@ -42,17 +42,20 @@ function beginGame(){
     update();
    generateSteps();
    initialJumping();
-  // board.music.play();
+   screenEffect();
   }, 1000/60);
+  board.music.play();
 }
 function pauseGame(){
   clearInterval(interval);
   interval= 0;
+  console.log('pause')
+  board.music.pause();
 }
 
 function gameOver(){
   pauseGame();
- // board.music.pause();
+ //board.music.pause();
   ctx.fillStyle = "#ccf7ff"
   ctx.fillRect (0,0, canvas.width, canvas.height);
   rebecca.draw();
@@ -60,8 +63,10 @@ function gameOver(){
     ctx.strokeStyle = "purple";
     ctx.lineWidth = 5;
     ctx.strokeText("Game Over", 120 , 250);
+   
   rebecca.music.play();
 }
+
 
 
 

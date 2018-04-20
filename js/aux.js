@@ -3,10 +3,16 @@ function initialJumping(){
   if (yolo < 430){
     mrJeffers.y--
   }else {
-    mrJeffers.y++
+    mrJeffers.y++;
   }
 }
-
+function screenEffect(){
+  if (mrJeffers.x < 0 - mrJeffers.width){
+    mrJeffers.x = canvas.width
+  }else if(mrJeffers.x > canvas.width){
+    mrJeffers.x = board.x
+  } 
+}
 function drawObstacles (){
   obst.forEach(function(obstacle){
    obstacle.draw();
@@ -21,12 +27,14 @@ function generateSteps (){
 }
   }
 
-
-function drawCharachters(){
-  charach.forEach(function(charachter){
-    charachter.draw();
-  });
+function generateEnemies (){
+  if (frames %  250 === 0){
+    var villian = Math.floor(Math.random ()*randomEnemie.length);
+    var x = Math.floor(Math.random()* canvas.width - 20)
+  }
 }
+
+
 
 
 

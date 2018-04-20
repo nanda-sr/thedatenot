@@ -33,3 +33,27 @@ outline:0;
 video{
   margin: 20px 51px;
 }
+#background{
+  background-color: rgba(158, 139, 168, 0.651);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+}
+
+#cover{
+  display: flex;
+    width: 500px;
+    height: 242px;
+    margin: 86px 500px;
+
+}
+#catbug{
+  display: flex;
+    width: 185px;
+    height: 185px;
+    margin-left: 671px;
+}
+body{
+  overflow: hidden;
+}
