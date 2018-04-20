@@ -16,6 +16,8 @@ function loseGame (){
 
   if (mrJeffers.y === canvas.height - 120) gameOver();
 }
+
+
 //MainFunctions
 
 
@@ -37,12 +39,15 @@ function update (){
 }
 
 function beginGame(){
+
+  console.log(board.score)
   if (interval > 0) return;
   interval = setInterval (function(){
     update();
    generateSteps();
    initialJumping();
    screenEffect();
+   //restartGame();
   }, 1000/60);
   board.music.play();
 }
@@ -52,10 +57,12 @@ function pauseGame(){
   console.log('pause')
   board.music.pause();
 }
-
 function gameOver(){
-  pauseGame();
  //board.music.pause();
+ console.log("lost")
+ clearInterval(interval)
+ restartGame()
+ setTimeout(function(){
   ctx.fillStyle = "#ccf7ff"
   ctx.fillRect (0,0, canvas.width, canvas.height);
   rebecca.draw();
@@ -63,11 +70,28 @@ function gameOver(){
     ctx.strokeStyle = "purple";
     ctx.lineWidth = 5;
     ctx.strokeText("Game Over", 120 , 250);
-   
-  rebecca.music.play();
+    rebecca.music.play();
+}, 100)
+}
+function continueGame(){
+  console.log(board.score)
+  if (interval > 0) return;
+  interval = setInterval (function(){
+    update();
+   generateSteps();
+   initialJumping();
+   screenEffect();
+  }, 1000/60);
 }
 
-
+function restartGame(){
+  interval=0;
+  mrJeffers.x = 250;
+  mrJeffers.y = canvas.height -150;
+  frames = 0;
+  yolo = 0;
+  obst = [];
+}
 
 
 

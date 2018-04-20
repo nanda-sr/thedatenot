@@ -1,6 +1,7 @@
 //AUX FUNCTIONS
 function initialJumping(){
-  if (yolo < 430){
+  console.log("initial")
+  if (yolo < 330){
     mrJeffers.y--
   }else {
     mrJeffers.y++;

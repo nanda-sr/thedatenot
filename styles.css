@@ -1,7 +1,7 @@
 .main-screen{
   display: flex;
 }
-.start-button , .stop-button{
+.start-button , .stop-button, .continue-button{
   display: flex;
   width: 200px;
   height: 71px;
@@ -14,6 +14,19 @@
   border-radius: 40px;
   box-shadow: -4px 5px grey;
 }
+/*.continue-button{
+  display: flex;
+  width: 200px;
+  height: 71px;
+  margin: -92px auto 20px;
+  padding: 0 50px;
+  color : white;
+  background-color: rgb(82, 206, 223);
+  font-size: 40px;
+  font-family: 'Hi Melody', cursive;
+  border-radius: 40px;
+  box-shadow: -4px 5px grey; 
+}*/
 button:focus{
 outline:0;
 }
@@ -41,19 +54,48 @@ video{
   z-index: -1;
 }
 
-#cover{
-  display: flex;
+.cover{
+    position: absolute;
+    z-index: 1;
+    top: 5%;
+    left: 3%;
     width: 500px;
     height: 242px;
     margin: 86px 500px;
 
 }
-#catbug{
-  display: flex;
-    width: 185px;
-    height: 185px;
-    margin-left: 671px;
+.catbug{
+    position:absolute;
+    z-index: 1;
+    bottom: 100px;
+    left:50%;
+    width:200px;
+    height: 200px;
 }
 body{
   overflow: hidden;
+}
+.cell  {
+  cursor: cell;
+}
+
+.move{
+  position: absolute;
+  top : 60%;
+  right: 8%;
+  width:200px;
+  height: 200px;
+}
+
+.move2{
+  position: absolute;
+  top: 13%;
+  left: 71%;
+  width: 415px;
+  height: 251px;
+  transition: all 1s ease-out;
+}
+
+.button-change{
+  display: none;
 }
